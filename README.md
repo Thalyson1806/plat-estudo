@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plataforma de Estudos UMC
 
-## Getting Started
+Plataforma colaborativa de estudos para alunos de graduação em Engenharia de Software e áreas relacionadas. Qualquer pessoa pode contribuir com conteúdo, tirar dúvidas no fórum e ajudar outros estudantes.
 
-First, run the development server:
+**Desenvolvedor inicial:** Thalyson Lima
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Sobre o projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+A plataforma nasceu com o objetivo de centralizar material de estudo de qualidade, de forma simples e direta — sem enrolação e sem cara de curso online. O foco é revisão rápida, conteúdo prático e comunidade.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### O que a plataforma oferece
 
-## Learn More
+- **Módulos de estudo** com tópicos, exemplos de código e quizzes interativos
+- **Fórum** para dúvidas e discussões entre os alunos
+- **Contribuição aberta** — qualquer usuário cadastrado pode criar matérias e adicionar tópicos
+- **Módulos fixos** com conteúdo já incluso: Python, Redes e Segurança, Sistemas Operacionais
 
-To learn more about Next.js, take a look at the following resources:
+### Módulos incluídos por padrão
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Módulo | Tópicos | Conteúdo |
+|---|:---:|---|
+| 🐍 Python | 12 | Variáveis, estruturas de controle, listas, strings, boas práticas... |
+| 🔒 Redes e Segurança | 8 | OSI, TCP/IP, DNS, HTTP/HTTPS, Firewall, Criptografia, Ataques, VPN |
+| 🖥️ Sistemas Operacionais | 8 | Processos, Threads, Escalonamento, Memória, Deadlock, I/O... |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Como contribuir com conteúdo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Existem duas formas de contribuir com conteúdo:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Pelo site (sem precisar de código)
+1. Crie uma conta na plataforma
+2. Acesse **Matérias** → **Nova matéria** para criar uma matéria nova
+3. Dentro de qualquer matéria, clique em **Adicionar tópico**
+4. Escreva o conteúdo e salve — fica disponível para todos na hora
+
+### Pelo código (módulos estáticos)
+Para adicionar conteúdo nos módulos fixos (Python, Redes, SO) ou criar um novo módulo estático:
+
+1. Fork o repositório
+2. Adicione os arquivos de tópico em `data/[nome-do-modulo]/`
+3. Crie ou atualize o `index.ts` do módulo
+4. Abra um Pull Request descrevendo o que foi adicionado
+
+Veja como os arquivos de `data/redes-seguranca/` estão estruturados como referência.
+
+---
+
+## Permissões
+
+| Ação | Visitante | Usuário | Admin |
+|---|:---:|:---:|:---:|
+| Ver matérias e tópicos | ✅ | ✅ | ✅ |
+| Ver e ler o fórum | ✅ | ✅ | ✅ |
+| Criar matéria | ❌ | ✅ | ✅ |
+| Adicionar tópico | ❌ | ✅ | ✅ |
+| Criar/responder no fórum | ❌ | ✅ | ✅ |
+| Editar/apagar próprio conteúdo | ❌ | ✅ | ✅ |
+| Apagar qualquer conteúdo | ❌ | ❌ | ✅ |
+| Apagar matérias | ❌ | ❌ | ✅ |
+
+---
+
+## Reportar problemas
+
+Encontrou um bug ou tem uma sugestão? Abra uma [issue](../../issues) descrevendo:
+- O que aconteceu
+- O que você esperava que acontecesse
+- Como reproduzir (se for um bug)
+
+---
+
+## Stack técnica
+
+Next.js 16 · TypeScript · Tailwind CSS · Auth.js v5 · Drizzle ORM · Neon (PostgreSQL) · Vercel
+
+---
+
+## Licença
+
+MIT — use, modifique e distribua livremente, desde que mantenha a atribuição.
