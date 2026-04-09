@@ -62,16 +62,13 @@ function StatCard({ icon, label, value }: { icon: React.ReactNode; label: string
 async function Dashboard({ nome }: { nome: string }) {
   const { recentSubjects, recentThreads } = await getDashboardData();
 
-  // Python conta como matéria extra (estática)
-  const pythonCard = {
-    slug: 'python',
-    title: 'Python',
-    emoji: '🐍',
-    description: '12 tópicos de revisão para Engenharia de Software.',
-    topic_count: 12,
-  };
+  const staticModules = [
+    { slug: 'python', title: 'Python', emoji: '🐍', description: '12 tópicos de revisão para Engenharia de Software.', topic_count: 12 },
+    { slug: 'redes-seguranca', title: 'Redes e Segurança', emoji: '🔒', description: 'OSI, TCP/IP, DNS, HTTP, Criptografia, Ataques e VPN.', topic_count: 8 },
+    { slug: 'sistemas-operacionais', title: 'Sistemas Operacionais', emoji: '🖥️', description: 'Processos, Threads, Escalonamento, Memória, Deadlock e I/O.', topic_count: 8 },
+  ];
 
-  const allSubjects = [pythonCard, ...recentSubjects].slice(0, 6);
+  const allSubjects = [...staticModules, ...recentSubjects].slice(0, 6);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
@@ -84,7 +81,7 @@ async function Dashboard({ nome }: { nome: string }) {
 
       {/* Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-10">
-        <StatCard icon={<BookOpen size={18} />} label="Matérias disponíveis" value={String(recentSubjects.length + 1)} />
+        <StatCard icon={<BookOpen size={18} />} label="Matérias disponíveis" value={String(recentSubjects.length + staticModules.length)} />
         <StatCard icon={<MessageSquare size={18} />} label="Discussões abertas" value={String(recentThreads.length)} />
         <StatCard icon={<Users size={18} />} label="Aberto a contribuições" value="Sim" />
       </div>

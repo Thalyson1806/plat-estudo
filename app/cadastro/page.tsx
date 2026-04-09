@@ -111,6 +111,7 @@ export default function CadastroPage() {
             <input
               type="email"
               required
+              placeholder="seu@email.com"
               value={email}
               onChange={e => setEmail(e.target.value)}
               className={inputCls}
@@ -118,6 +119,9 @@ export default function CadastroPage() {
               onFocus={onFocus}
               onBlur={onBlur}
             />
+            <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
+              Será usado apenas para login.
+            </p>
           </div>
 
           <div>
@@ -149,10 +153,11 @@ export default function CadastroPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1.5" style={labelStyle}>Turma</label>
+            <label className="block text-sm font-medium mb-1.5" style={labelStyle}>
+              Turma <span className="text-xs font-normal" style={{ color: 'var(--text-muted)' }}>(opcional)</span>
+            </label>
             <input
               type="text"
-              required
               placeholder="Ex: ES-3A, CC-2B..."
               value={turma}
               onChange={e => setTurma(e.target.value)}

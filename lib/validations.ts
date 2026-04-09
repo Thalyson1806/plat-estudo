@@ -9,7 +9,7 @@ export const registerSchema = z.object({
     .min(8, 'Senha deve ter ao menos 8 caracteres')
     .regex(/[A-Z]/, 'Senha precisa ter ao menos uma letra maiúscula')
     .regex(/[0-9]/, 'Senha precisa ter ao menos um número'),
-  turma: z.string().min(1, 'Turma é obrigatória').max(50).trim(),
+  turma: z.string().max(50).trim().optional().default(''),
   curso: z.string().min(2, 'Curso é obrigatório').max(100).trim(),
 });
 
